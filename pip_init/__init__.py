@@ -7,7 +7,9 @@ from sys import version_info
 from subprocess import Popen, PIPE
 from getpass import getuser
 import os
+import datetime
 
+x = datetime.datetime.now()
 
 def input_message(field_name, default_value):
     return u'{} ({}): '.format(field_name, default_value)
@@ -61,6 +63,8 @@ def default_values(field_name):
         return 'MIT'
     elif field_name == 'author':
         return get_username()
+    elif field_name == 'date':
+        return x
 
 
 def get_input(input_msg, default=None):
